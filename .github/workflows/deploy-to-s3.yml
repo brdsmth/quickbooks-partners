@@ -1,0 +1,56 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches: [ prod ]
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+        cache-dependency-path: lander/package-lock.json
+        
+    - name: Install dependencies
+      run: |
+        cd lander
+        npm install
+        
+    - name: Build application
+      run: |
+        cd lander
+        npm run build
+        
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+        
+    - name: Deploy to S3
+      run: |
+        aws s3 sync lander/dist/ s3://${{ secrets.S3_BUCKET_NAME }} --delete
+        
+    - name: Invalidate CloudFront cache (optional)
+      run: |
+        if [ ! -z "${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}" ]; then
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+        fi
+      
+    - name: Deployment summary
+      run: |
+        echo "🚀 Deployment completed successfully!"
+        echo "📦 Built files uploaded to S3 bucket: ${{ secrets.S3_BUCKET_NAME }}"
+        echo "🌐 Site URL: https://${{ secrets.S3_BUCKET_NAME }}.s3-website-us-east-1.amazonaws.com" 

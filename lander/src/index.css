@@ -1,0 +1,233 @@
+:root {
+  --primary-color:#2a4a5a;
+  --primary-hover: #18313E;
+  --text-color: #ffffff;
+  --background-color: #3B834A;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+header {
+  text-align: center;
+  margin-bottom: 4rem;
+  background-color: var(--primary-color);
+  padding: 2rem;
+}
+
+.hero {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero p {
+  max-width: 600px;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+.big-button {
+  border-radius: 12px;
+  border: 2px solid transparent;
+  padding: 1em 3em;
+  font-size: 1.4em;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(100, 108, 255, 0.3);
+}
+
+.big-button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(100, 108, 255, 0.4);
+}
+
+.big-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(100, 108, 255, 0.3);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 5rem;
+  border-top: 1px solid #eaeaea;
+} 
+
+footer p {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.info {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.info h2 {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.info p {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.info ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.info ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.info ul li img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.features {
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--primary-color);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-table table {
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 12px rgba(24, 49, 62, 0.08);
+}
+
+.feature-table th, .feature-table td {
+  padding: 1em 2em;
+  font-size: 1.3em;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
+
+@media (max-width: 768px) {
+
+  .info ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Use center instead of space-between */
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .info ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;      /* Prevents stretching */
+    margin: 0.5em 0.5em;  /* Adds vertical spacing */
+    padding: 0;
+  }
+
+  .info ul li img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .feature-table {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+  
+  .feature-table table {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .feature-table th, .feature-table td {
+    padding: 0.75em 0.25em;
+    font-size: 1em;
+    word-break: normal;
+  }
+}

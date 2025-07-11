@@ -14,9 +14,8 @@ Quickbooks Partners is an active Slack community for Quickbooks developers. From
 - 📈 Keep up on the latest API updates
 - 💬 Get feedback on your new app
 - 🤝 Find others to code with
-- 💰 Maybe find some customers
 
-**30+ members and growing!**
+**40+ members and growing!**
 
 ## Features
 
@@ -27,7 +26,7 @@ Quickbooks Partners is an active Slack community for Quickbooks developers. From
 
 ## Live Demo
 
-Visit our landing page: [Quickbooks Partners](https://your-domain.com)
+Visit our landing page: [Quickbooks Partners](http://www.quickbookpartners.com)
 
 Join our Slack community: [Join Now](https://join.slack.com/t/quickbookspartners/shared_invite/zt-1xhodjadu-LGxJcYEbwofhOg_YHvx5Mg)
 

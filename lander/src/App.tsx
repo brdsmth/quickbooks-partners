@@ -26,13 +26,18 @@ function App() {
           <p>Our community members are building innovative QuickBooks applications:</p>
           <ul role="list" aria-label="Featured QuickBooks applications from community members">
             <li>
-              <a href="https://lightweightlabs.com/" aria-label="Visit Lightweight Labs - QuickBooks integration platform">
+              <a href="https://lightweightlabs.com/" aria-label="Visit Lightweight Labs - QuickBooks integration platform" title="Lightweight Labs - QuickBooks integration platform">
                 <img src="/lightweight-labs.png" alt="Lightweight Labs - QuickBooks integration platform" loading="lazy" />
               </a>
             </li>
             <li>
-              <a href="https://twinebiller.com.au/" aria-label="Visit Twine - QuickBooks billing solution">
+              <a href="https://twinebiller.com.au/" aria-label="Visit Twine - QuickBooks billing solution" title="Twine - QuickBooks billing solution">
                 <img src="/twine.png" alt="Twine - QuickBooks billing solution" loading="lazy" />
+              </a>
+            </li>
+            <li>
+              <a href="https://sendtosheets.com/" aria-label="Visit Send to Sheets - QuickBooks to Google Sheets integration" title="Send to Sheets - QuickBooks to Google Sheets integration">
+                <img src="/send-to-sheets.png" alt="Send to Sheets - QuickBooks to Google Sheets integration" loading="lazy" />
               </a>
             </li>
           </ul>
